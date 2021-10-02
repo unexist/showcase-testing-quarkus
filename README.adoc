@@ -1,0 +1,15 @@
+= Showcase for testing based on Quarkus
+
+This project holds a showcase for various testing strategies and technologies.
+
+== Libraries
+
+- https://jqwik.net[jqwik]
+- https://github.com/DiUS/java-faker[java-faker]
+- https://github.com/lukas-krecan/JsonUnit[JsonUnit]
+
+=== Instructions
+
+Following make targets exist:
+
+- **test** - Run tests
