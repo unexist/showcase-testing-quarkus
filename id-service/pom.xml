@@ -3,18 +3,13 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>showcase-testing-quarkus</artifactId>
+    <artifactId>id-service</artifactId>
     <version>0.1</version>
-    <packaging>pom</packaging>
 
     <parent>
         <groupId>dev.unexist.showcase</groupId>
-        <artifactId>quarkus-parent</artifactId>
+        <artifactId>showcase-testing-quarkus</artifactId>
         <version>0.1</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-
-    <modules>
-        <module>todo-service</module>
-        <module>id-service</module>
-    </modules>
 </project>
