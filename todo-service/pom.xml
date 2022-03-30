@@ -24,6 +24,16 @@
     </properties>
 
     <dependencies>
+        <!-- Quarkus -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-client-jackson</artifactId>
+        </dependency>
+
         <!-- Hoverfly -->
         <dependency>
             <groupId>io.specto</groupId>
