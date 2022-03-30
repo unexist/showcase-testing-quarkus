@@ -10,39 +10,35 @@
 
 package dev.unexist.showcase.todo.hoverfly;
 
-import io.specto.hoverfly.junit.core.Hoverfly;
-import io.specto.hoverfly.junit5.HoverflyExtension;
-import io.specto.hoverfly.junit5.api.HoverflyConfig;
-import io.specto.hoverfly.junit5.api.HoverflyCore;
-import org.junit.jupiter.api.BeforeEach;
+import dev.unexist.showcase.todo.adapter.IdService;
+import io.quarkus.test.common.QuarkusTestResource;
+import io.quarkus.test.junit.QuarkusTest;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 
-import javax.ws.rs.core.MediaType;
-import java.util.UUID;
+import javax.inject.Inject;
 
 import static io.restassured.RestAssured.given;
-import static io.specto.hoverfly.junit.core.SimulationSource.dsl;
-import static io.specto.hoverfly.junit.dsl.HoverflyDsl.service;
-import static io.specto.hoverfly.junit.dsl.ResponseCreators.success;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@HoverflyCore(config = @HoverflyConfig(proxyLocalHost = true, destination = "0.0.0.0/id"))
-@ExtendWith(HoverflyExtension.class)
+@QuarkusTest
+@QuarkusTestResource(HoverflyResource.class)
 public class TestTodoHoverfly {
 
-    @BeforeEach
-    public void setup(Hoverfly hoverfly) {
-        hoverfly.simulate(dsl(
-                service("0.0.0.0")
-                        .get("/id")
-                        .willReturn(success(UUID.randomUUID().toString(), MediaType.APPLICATION_JSON))));
-    }
+    @Inject
+    @RestClient
+    IdService idService;
 
     @Test
-    void testIdService() {
+    void testIdServiceWithRestAssured() {
         given()
                 .when().get("/id")
                 .then()
                 .statusCode(200);
+    }
+
+    @Test
+    void testidServiceWithRestClient() {
+        assertThat(this.idService.getId()).isNotEmpty();
     }
 }
