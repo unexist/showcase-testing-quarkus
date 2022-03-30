@@ -78,7 +78,8 @@ public class TodoResourceJsonAssertTest {
                     .isArray()
                     .isNotEmpty()
                     .first()
-                        .hasFieldOrPropertyWithValue("id", BigDecimal.valueOf(1));
+                .isObject()
+                .containsEntry("id", BigDecimal.valueOf(1));
 
         System.out.println(jsonOut);
     }
