@@ -3,7 +3,7 @@
  *
  * @file Todo repository interface
  * @copyright 2020-2021 Christoph Kappel <christoph@unexist.dev>
- * @version $Id: todo-service-helper/src/main/java/dev/unexist/showcase/todo/domain/todo/TodoRepository.java,v 76 1631001935.0-7200 unexist $
+ * @version $Id$
  *
  * This program can be distributed under the terms of the Apache License v2.0.
  * See the file LICENSE for details.

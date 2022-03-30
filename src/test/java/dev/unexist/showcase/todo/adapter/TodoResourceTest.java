@@ -3,7 +3,7 @@
  *
  * @file Stupid integration test
  * @copyright 2019 Christoph Kappel <christoph@unexist.dev>
- * @version $Id: todo-service-helper/src/test/java/dev/unexist/showcase/todo/adapter/TodoResourceTest.java,v 102 1633004665.0-7200 unexist $
+ * @version $Id$
  *
  * This program can be distributed under the terms of the Apache License v2.0.
  * See the file LICENSE for details.

@@ -3,7 +3,7 @@
  *
  * @file Contrived tests with PBT
  * @copyright 2020-2021 Christoph Kappel <christoph@unexist.dev>
- * @version $Id: todo-service-helper/src/test/java/dev/unexist/showcase/todo/domain/todo/TodoJqwikTest.java,v 86 1631198725.0-7200 unexist $
+ * @version $Id$
  *
  * This program can be distributed under the terms of the Apache License v2.0.
  * See the file LICENSE for details.

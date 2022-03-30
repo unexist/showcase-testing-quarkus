@@ -1,5 +1,3 @@
-.DEFAULT_GOAL := update-tests
-
 define JSON_TODO
 curl -X 'POST' \
   'http://localhost:8080/todo' \
