@@ -36,7 +36,7 @@ public class TestTodoHoverfly {
     IdService idService;
 
     @Test
-    void testIdServiceWithRestAssured() throws InterruptedException {
+    void testIdServiceWithRestAssured() {
         given()
                 .spec(new RequestSpecBuilder().setBaseUri(this.serviceUrl).build())
                 .when().get("/id")
