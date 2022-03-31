@@ -14,6 +14,8 @@ package dev.unexist.showcase.todo.integration.virtualization;
 import dev.unexist.showcase.todo.adapter.IdService;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import io.restassured.builder.RequestSpecBuilder;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +28,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @QuarkusTestResource(HoverflyResource.class)
 public class TestTodoHoverfly {
 
+    @ConfigProperty(name = "id.service.url")
+    String serviceUrl;
+
     @Inject
     @RestClient
     IdService idService;
@@ -33,7 +38,7 @@ public class TestTodoHoverfly {
     @Test
     void testIdServiceWithRestAssured() throws InterruptedException {
         given()
-                .spec(
+                .spec(new RequestSpecBuilder().setBaseUri(this.serviceUrl).build())
                 .when().get("/id")
                 .then()
                 .statusCode(200);
