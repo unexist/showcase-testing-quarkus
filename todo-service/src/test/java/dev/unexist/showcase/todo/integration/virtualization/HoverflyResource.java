@@ -32,7 +32,9 @@ public class HoverflyResource implements QuarkusTestResourceLifecycleManager {
     @Override
     public Map<String, String> start() {
         this.hoverfly = new Hoverfly(HoverflyConfig.localConfigs()
-                .destination(SERVICE_URL).proxyPort(8080), HoverflyMode.SIMULATE);
+                .proxyLocalHost()
+                .destination(SERVICE_URL)
+                .proxyPort(8080), HoverflyMode.SIMULATE);
 
         this.hoverfly.start();
         this.hoverfly.simulate(dsl(
