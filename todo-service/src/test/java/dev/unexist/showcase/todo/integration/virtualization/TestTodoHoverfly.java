@@ -1,6 +1,7 @@
 /**
- * @package Showcase
- * @file Test with Hoverfly
+ * @package Showcase-Testing-Quarkus
+ *
+ * @file Tests with Hoverfly
  * @copyright 2022 Christoph Kappel <christoph@unexist.dev>
  * @version $Id$
  *
@@ -8,7 +9,7 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.hoverfly;
+package dev.unexist.showcase.todo.integration.virtualization;
 
 import dev.unexist.showcase.todo.adapter.IdService;
 import io.quarkus.test.common.QuarkusTestResource;
@@ -30,8 +31,9 @@ public class TestTodoHoverfly {
     IdService idService;
 
     @Test
-    void testIdServiceWithRestAssured() {
+    void testIdServiceWithRestAssured() throws InterruptedException {
         given()
+                .spec(
                 .when().get("/id")
                 .then()
                 .statusCode(200);
