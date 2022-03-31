@@ -12,11 +12,13 @@ package dev.unexist.showcase.todo.adapter;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @Path("/id")
 @RegisterRestClient
+@ApplicationScoped
 public interface IdService {
 
     @GET
