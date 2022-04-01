@@ -25,10 +25,10 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
-@QuarkusTestResource(HoverflyResource.class)
+@QuarkusTestResource(value = HoverflyResource.class, restrictToAnnotatedClass = true)
 public class TestTodoHoverfly {
 
-    @ConfigProperty(name = "id.service.url")
+    @ConfigProperty(name = "id.service.url", defaultValue = "")
     String serviceUrl;
 
     @Inject
