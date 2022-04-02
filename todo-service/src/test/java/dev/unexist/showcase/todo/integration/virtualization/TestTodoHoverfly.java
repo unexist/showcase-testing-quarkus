@@ -38,7 +38,7 @@ public class TestTodoHoverfly {
     @Test
     void testIdServiceWithRestAssured() {
         given()
-                .spec(new RequestSpecBuilder().setBaseUri(this.serviceUrl).build())
+                .spec(new RequestSpecBuilder().setBaseUri("http://" + this.serviceUrl).build())
                 .when().get("/id")
                 .then()
                 .statusCode(200);

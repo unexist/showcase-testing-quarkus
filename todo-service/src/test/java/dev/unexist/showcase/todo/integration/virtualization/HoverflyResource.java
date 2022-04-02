@@ -42,7 +42,7 @@ public class HoverflyResource implements QuarkusTestResourceLifecycleManager {
                         .get("/id")
                         .willReturn(success(UUID.randomUUID().toString(), MediaType.APPLICATION_JSON))));
 
-        return Map.of("id.service.url", "http://" + SERVICE_URL);
+        return Map.of("id.service.url", SERVICE_URL);
     }
 
     @Override
