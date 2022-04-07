@@ -39,8 +39,9 @@ public class TestIdServiceHoverfly {
     void shouldGetIdWithRestAssured() {
         given()
                 .spec(new RequestSpecBuilder().setBaseUri("http://" + this.serviceUrl).build())
-                .when().get("/id")
-                .then()
+        .when()
+                .get("/id")
+        .then()
                 .statusCode(200);
     }
 
