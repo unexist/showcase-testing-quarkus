@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 @QuarkusTestResource(value = HoverflyResource.class, restrictToAnnotatedClass = true)
-public class TestTodoHoverfly {
+public class TestIdServiceHoverfly {
 
     @ConfigProperty(name = "id.service.url", defaultValue = "")
     String serviceUrl;

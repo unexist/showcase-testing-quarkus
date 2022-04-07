@@ -23,7 +23,7 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
-public class TestTodoMockito {
+public class TestIdServiceMockito {
 
     @InjectMock
     @RestClient
