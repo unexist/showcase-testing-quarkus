@@ -30,7 +30,7 @@ public class TestTodoMockito {
     IdService idService;
 
     @Test
-    void testidServiceWithRestClient() {
+    void shouldGetIdWithRestClient() {
         Mockito.when(idService.getId()).thenReturn(UUID.randomUUID().toString());
 
         assertThat(this.idService.getId()).isNotEmpty();

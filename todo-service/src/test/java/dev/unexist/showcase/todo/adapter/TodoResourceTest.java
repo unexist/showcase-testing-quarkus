@@ -20,7 +20,7 @@ import static io.restassured.RestAssured.given;
 public class TodoResourceTest {
 
     @Test
-    public void testTodoEndpoint() {
+    public void shouldGetNoContent() {
         given()
           .when().get("/todo")
           .then()

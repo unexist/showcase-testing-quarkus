@@ -30,7 +30,7 @@ public class TodoJqwikTest {
 
     @Property
 //    @Report(Reporting.GENERATED)
-    public void testCreateTodo(@ForAll String anyStr) {
+    public void shouldCreateTodo(@ForAll String anyStr) {
         Todo todo = new Todo();
 
         todo.setTitle(anyStr);
@@ -41,8 +41,8 @@ public class TodoJqwikTest {
     }
 
     @Property
-    public void testCreateTodoWithDate(@ForAll String anyStr,
-                                       @ForAll @IntRange(min = TodoJqwikTest.FUTURE_TIME) int unixtime)
+    public void shouldCreateTodoWithDate(@ForAll String anyStr,
+                                         @ForAll @IntRange(min = TodoJqwikTest.FUTURE_TIME) int unixtime)
     {
         Todo todo = new Todo();
 

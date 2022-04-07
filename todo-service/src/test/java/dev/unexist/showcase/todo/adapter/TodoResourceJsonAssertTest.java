@@ -30,7 +30,7 @@ import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 public class TodoResourceJsonAssertTest {
 
     @Test
-    public void testTodoPostToEndpoint() {
+    public void shouldPostTodo() {
         Faker faker = new Faker();
         TodoBase todo = new TodoBase();
 
@@ -55,7 +55,7 @@ public class TodoResourceJsonAssertTest {
     }
 
     @Test
-    public void testTodoGetFromEndpoint() {
+    public void shouldSuccessfullyGetDataFrom() {
         String jsonOut = given()
             .when()
                 .accept(MediaType.APPLICATION_JSON)
@@ -87,6 +87,5 @@ public class TodoResourceJsonAssertTest {
     private LocalDate convertDateToLocalDate(final Date date) {
         return date.toInstant().atZone(
                 ZoneId.systemDefault()).toLocalDate();
-
     }
 }

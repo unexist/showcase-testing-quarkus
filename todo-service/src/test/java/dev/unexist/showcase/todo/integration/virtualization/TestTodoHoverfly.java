@@ -36,7 +36,7 @@ public class TestTodoHoverfly {
     IdService idService;
 
     @Test
-    void testIdServiceWithRestAssured() {
+    void shouldGetIdWithRestAssured() {
         given()
                 .spec(new RequestSpecBuilder().setBaseUri("http://" + this.serviceUrl).build())
                 .when().get("/id")
@@ -45,7 +45,7 @@ public class TestTodoHoverfly {
     }
 
     @Test
-    void testidServiceWithRestClient() {
+    void shouldGetIdWithRestClient() {
         assertThat(this.idService.getId()).isNotEmpty();
     }
 }

@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TodoFakerTest {
 
     @Test
-    public void testCreateTodo() {
+    public void shouldCreateTodo() {
         Faker faker = new Faker();
         Todo todo = new Todo();
 
@@ -35,7 +35,7 @@ public class TodoFakerTest {
     }
 
     @Test
-    public void testCreateTodoWithDate() {
+    public void shouldCreateTodoWithDate() {
         Faker faker = new Faker();
         Todo todo = new Todo();
 
