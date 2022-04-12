@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TestTodoServiceHoverfly {
 
     @Test
-    void shouldGetIdWithRestAssured() {
+    void shouldCreateTodoWithRestAssured() {
         String location =
             given()
                 .contentType(ContentType.JSON)
