@@ -14,9 +14,6 @@
     </parent>
 
     <properties>
-        <!-- Hovefly -->
-        <hoverfly-java-junit5.version>0.14.1</hoverfly-java-junit5.version>
-
         <!-- Testing -->
         <jqwik.version>1.6.5</jqwik.version>
         <javafaker.version>1.0.2</javafaker.version>
@@ -36,14 +33,6 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5-mockito</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Hoverfly -->
-        <dependency>
-            <groupId>io.specto</groupId>
-            <artifactId>hoverfly-java-junit5</artifactId>
-            <version>${hoverfly-java-junit5.version}</version>
             <scope>test</scope>
         </dependency>
 
