@@ -17,7 +17,7 @@ import dev.unexist.showcase.todo.domain.todo.TodoBase;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.MediaType;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZoneId;
